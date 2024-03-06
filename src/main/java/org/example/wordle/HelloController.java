@@ -143,7 +143,7 @@ public class HelloController {
             Object wordle = new Wordle(palabra); // Reemplaza 'Wordle' con tu clase de objeto
 
             // Envía el objeto al servidor
-            outputStream.writeObject(palabra);
+            outputStream.writeObject(wordle);
             outputStream.flush();
 
 
