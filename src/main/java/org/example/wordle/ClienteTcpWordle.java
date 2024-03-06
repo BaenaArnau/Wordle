@@ -12,4 +12,7 @@ public class ClienteTcpWordle {
     public void run(){
 
     }
+    public void string(String palabra){
+
+    }
 }

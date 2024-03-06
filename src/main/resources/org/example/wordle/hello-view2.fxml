@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" minHeight="720.0" minWidth="1080.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.wordle.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+      <children>
+         <Label id="PrimeraLetra" fx:id="PrimeraLetra1" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffad3f;" text="A" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="SegundaLetra" fx:id="SegundaLetra1" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="B" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="TerceraLetra" fx:id="TerceraLetra1" alignment="CENTER" contentDisplay="CENTER" minHeight="70.0" prefWidth="70.0" text="C" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="CuartaLetra" fx:id="CuartaLetra1" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="QuintaLetra" fx:id="QuintaLetra1" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" layoutX="30.0" layoutY="30.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label id="PrimeraLetra" fx:id="PrimeraLetra2" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffad3f;" text="A" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="SegundaLetra" fx:id="SegundaLetra2" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="B" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="TerceraLetra" fx:id="TerceraLetra2" alignment="CENTER" contentDisplay="CENTER" minHeight="70.0" prefWidth="70.0" text="C" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="CuartaLetra" fx:id="CuartaLetra2" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="QuintaLetra" fx:id="QuintaLetr2" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" layoutX="30.0" layoutY="30.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label id="PrimeraLetra" fx:id="PrimeraLetra3" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffad3f;" text="A" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="SegundaLetra" fx:id="SegundaLetra3" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="B" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="TerceraLetra" fx:id="TerceraLetra3" alignment="CENTER" contentDisplay="CENTER" minHeight="70.0" prefWidth="70.0" text="C" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="CuartaLetra" fx:id="CuartaLetra3" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="QuintaLetra" fx:id="QuintaLetr3" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" layoutX="30.0" layoutY="294.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label id="PrimeraLetra" fx:id="PrimeraLetra4" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffad3f;" text="A" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="SegundaLetra" fx:id="SegundaLetra4" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="B" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="TerceraLetra" fx:id="TerceraLetra4" alignment="CENTER" contentDisplay="CENTER" minHeight="70.0" prefWidth="70.0" text="C" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="CuartaLetra" fx:id="CuartaLetra4" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="QuintaLetra" fx:id="QuintaLetr4" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" layoutX="30.0" layoutY="390.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label id="PrimeraLetra" fx:id="PrimeraLetra5" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffad3f;" text="A" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="SegundaLetra" fx:id="SegundaLetra5" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="B" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="TerceraLetra" fx:id="TerceraLetra5" alignment="CENTER" contentDisplay="CENTER" minHeight="70.0" prefWidth="70.0" text="C" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="CuartaLetra" fx:id="CuartaLetra5" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="QuintaLetra" fx:id="QuintaLetra5" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" layoutX="30.0" layoutY="390.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label id="PrimeraLetra" fx:id="PrimeraLetra6" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffad3f;" text="A" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="SegundaLetra" fx:id="SegundaLetra6" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="B" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="TerceraLetra" fx:id="TerceraLetra6" alignment="CENTER" contentDisplay="CENTER" minHeight="70.0" prefWidth="70.0" text="C" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="CuartaLetra" fx:id="CuartaLetra6"  alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+         </Label>
+         <Label id="QuintaLetra" fx:id="QuintaLetra6" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+            <font>
+               <Font size="50.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <TextField />
+  <Button text="Hello!" />
+</VBox>
