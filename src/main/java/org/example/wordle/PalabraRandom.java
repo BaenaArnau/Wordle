@@ -11,9 +11,11 @@ import java.net.URL;
  */
 public class PalabraRandom {
     private final String palabra;
+    private boolean palabraEncontrada;
 
     public PalabraRandom() {
         this.palabra = encontrarPalabra();
+        this.palabraEncontrada = false;
     }
 
     private String encontrarPalabra(){
@@ -52,5 +54,17 @@ public class PalabraRandom {
         }
 
         return coincidaencias;
+    }
+
+    public String getPalabra() {
+        return palabra;
+    }
+
+    public boolean isPalabraEncontrada() {
+        return palabraEncontrada;
+    }
+
+    public void setPalabraEncontrada(boolean palabraEncontrada) {
+        this.palabraEncontrada = palabraEncontrada;
     }
 }
