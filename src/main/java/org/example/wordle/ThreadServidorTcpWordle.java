@@ -20,10 +20,12 @@ public class ThreadServidorTcpWordle implements Runnable {
 
     @Override
     public void run() {
-        try (
-                ObjectOutputStream outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-                ObjectInputStream inputStream = new ObjectInputStream(clientSocket.getInputStream())
-        ) {
+        System.out.println("antes try");
+        try {
+            ObjectOutputStream outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+        ObjectInputStream inputStream = new ObjectInputStream(clientSocket.getInputStream());
+
+            System.out.println("despues try");
             String receivedString = (String) inputStream.readObject();
             int[] comprobacion = palabraRandom.comprobarPalabra(receivedString);
 

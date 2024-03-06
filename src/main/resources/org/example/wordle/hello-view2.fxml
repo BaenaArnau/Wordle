@@ -189,7 +189,7 @@
                <Font size="50.0" />
             </font>
          </Label>
-         <Label id="CuartaLetra" fx:id="CuartaLetra6"  alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <Label id="CuartaLetra" fx:id="CuartaLetra6" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="D" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
             <font>
                <Font size="50.0" />
             </font>
@@ -204,6 +204,6 @@
          </Label>
       </children>
    </HBox>
-   <TextField />
-  <Button text="Hello!" />
+   <TextField fx:id="textFieldPalabra" onAction="#onPlay" />
+  <Button onAction="#onPlay" text="Hello!" />
 </VBox>

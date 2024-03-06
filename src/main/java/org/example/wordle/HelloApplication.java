@@ -12,6 +12,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 540, 700);
+
         stage.setTitle("Wordle!");
         stage.setScene(scene);
         stage.show();
@@ -25,5 +26,11 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public void instanciarServer(int port){
+        ServidorTcpWordle tcpWordle = new ServidorTcpWordle(port);
+        tcpWordle.listen();
+
     }
 }

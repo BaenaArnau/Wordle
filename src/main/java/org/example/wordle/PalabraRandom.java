@@ -42,12 +42,15 @@ public class PalabraRandom {
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
                 if (recividoCaracteres[i] == palabraCaracteres[i]){
+                    //Verde
                     coincidaencias[i] = 2;
                     break;
                 } else if (recividoCaracteres[i] == palabraCaracteres[j]) {
+                    //Naranja
                     coincidaencias[i] = 1;
                     break;
                 }else{
+                    //Gris
                     coincidaencias[i] = 0;
                 }
             }

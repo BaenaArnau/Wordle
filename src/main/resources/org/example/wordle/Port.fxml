@@ -12,7 +12,8 @@
     </padding>
    <children>
       <Label text="Configura el puerto con un numero entre el 1 y el 65535" />
-      <TextField promptText="ej: 45678" />
-      <Button mnemonicParsing="false" text="Cambiar Puerto" />
+      <Label fx:id="labelPort" />
+      <TextField fx:id="textFieldPort" promptText="ej: 45678" />
+      <Button mnemonicParsing="false" onAction="#onPortCOnfigClick" text="Cambiar Puerto" />
    </children>
 </VBox>
