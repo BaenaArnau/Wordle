@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
@@ -33,6 +34,16 @@ public class HelloController {
     @FXML
     TextField textFieldPalabra;
 
+    boolean palabraEncontrada;
+
+    int [] estadoPalabra;
+    Socket socket;
+    ObjectInputStream inputStream;
+    ObjectOutputStream outputStream;
+
+
+
+    String palabraBuena;
     @FXML //Menu.fmxl btn (Jugar)
     protected void onPlayClick() {
         System.out.println(port);
@@ -130,22 +141,40 @@ public class HelloController {
     protected void onPlay() throws IOException {
 
             // Obtener la dirección IP del servidor del campo de texto
+            if (turno == 1) {
+                // Establecer la conexión con el servidor en la dirección IP y el puerto especificados
+                System.out.println("antes del socket");
+                socket = new Socket("localhost", port);
+                System.out.println("despues del socket");
+                palabra = String.valueOf(textFieldPalabra.getText());
+                // Crea un ObjectOutputStream asociado al flujo de salida del socket
+                inputStream = new ObjectInputStream(socket.getInputStream());
+                outputStream = new ObjectOutputStream(socket.getOutputStream());
+            }
+                // Crea un objeto que deseas enviar al servidor (debe ser serializable)
+                Wordle wordle = new Wordle(palabra);
 
-            // Establecer la conexión con el servidor en la dirección IP y el puerto especificados
-            System.out.println("antes del socket");
-            Socket socket = new Socket("localhost", port);
-            System.out.println("despues del socket");
-            palabra = String.valueOf(textFieldPalabra);
-            // Crea un ObjectOutputStream asociado al flujo de salida del socket
-            ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
+                // Envía el objeto al servidor
+                outputStream.writeObject(wordle);
+                outputStream.flush();
 
-            // Crea un objeto que deseas enviar al servidor (debe ser serializable)
-            Object wordle = new Wordle(palabra); // Reemplaza 'Wordle' con tu clase de objeto
+                try {
+                    inputPartida(inputStream);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+    }
 
-            // Envía el objeto al servidor
-            outputStream.writeObject(wordle);
-            outputStream.flush();
 
+    protected void inputPartida(ObjectInputStream respuestaServidor) throws IOException, ClassNotFoundException {
+        turno++;
+        palabraEncontrada = respuestaServidor.readBoolean();
+        estadoPalabra = (int[]) respuestaServidor.readObject();
+        palabraBuena = (String) respuestaServidor.readObject();
+        System.out.println(palabraBuena);
+        for (int i = 0; i < estadoPalabra.length; i++) {
+            System.out.println(estadoPalabra[i]);
+        }
 
     }
 }

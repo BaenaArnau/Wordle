@@ -34,29 +34,34 @@ public class PalabraRandom {
         return respuesta;
     }
 
-    public int[] comprobarPalabra(String recivido){
+    public int[] comprobarPalabra(String recibido){
         char[] palabraCaracteres = palabra.toLowerCase().toCharArray();
-        char[] recividoCaracteres = recivido.toLowerCase().toCharArray();
-        int[] coincidaencias = new int[5];
+        char[] recibidoCaracteres = recibido.toLowerCase().toCharArray();
+        int[] coincidencias = new int[5];
 
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 5; j++){
-                if (recividoCaracteres[i] == palabraCaracteres[i]){
-                    //Verde
-                    coincidaencias[i] = 2;
+        for (int i = 0; i < 5; i++) {
+            boolean coincidenciaExacta = false;
+
+            for (int j = 0; j < 5; j++) {
+                if (recibidoCaracteres[i] == palabraCaracteres[j]) {
+                    coincidenciaExacta = true;
                     break;
-                } else if (recividoCaracteres[i] == palabraCaracteres[j]) {
-                    //Naranja
-                    coincidaencias[i] = 1;
-                    break;
-                }else{
-                    //Gris
-                    coincidaencias[i] = 0;
+                }
+            }
+
+            if (coincidenciaExacta) {
+                coincidencias[i] = 2; // Verde
+            } else {
+                for (int j = 0; j < 5; j++) {
+                    if (recibidoCaracteres[i] == palabraCaracteres[j] && coincidencias[j] == 0) {
+                        coincidencias[i] = 1; // Naranja
+                        coincidencias[j] = 1;
+                        break;
+                    }
                 }
             }
         }
-
-        return coincidaencias;
+        return coincidencias;
     }
 
     public String getPalabra() {

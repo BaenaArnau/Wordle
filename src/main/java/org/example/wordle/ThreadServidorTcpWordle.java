@@ -20,28 +20,41 @@ public class ThreadServidorTcpWordle implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("antes try");
+        ObjectOutputStream outputStream = null;
+        ObjectInputStream inputStream = null;
         try {
-            ObjectOutputStream outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-        ObjectInputStream inputStream = new ObjectInputStream(clientSocket.getInputStream());
-
-            System.out.println("despues try");
-            String receivedString = (String) inputStream.readObject();
-            int[] comprobacion = palabraRandom.comprobarPalabra(receivedString);
-
-            // Compara si comprobacion es igual a completado
-            boolean palabraEncontrada = Arrays.equals(comprobacion, completado);
-
-            outputStream.writeBoolean(palabraEncontrada);
-            outputStream.flush();
-            System.out.println("La palabra ha sido encontrada: " + palabraEncontrada);
-        } catch (IOException | ClassNotFoundException e) {
+            outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+            inputStream = new ObjectInputStream(clientSocket.getInputStream());
+        } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
+        }
+
+        System.out.println("antes try");
+        while (true) {
             try {
-                clientSocket.close();
-            } catch (IOException ex) {
-                Logger.getLogger(ThreadServidorTcpWordle.class.getName()).log(Level.SEVERE, null, ex);
+
+
+                System.out.println("despues try");
+
+                // Cambia la conversión a Wordle en lugar de String
+                Wordle receivedWordle = (Wordle) inputStream.readObject();
+                String receivedString = receivedWordle.getPalabra();
+
+                int[] comprobacion = palabraRandom.comprobarPalabra(receivedString);
+
+                // Compara si comprobacion es igual a completado
+                boolean palabraEncontrada = Arrays.equals(comprobacion, completado);
+
+                outputStream.writeBoolean(palabraEncontrada);
+                outputStream.writeObject(comprobacion);
+                outputStream.writeObject(palabraRandom.getPalabra());
+                outputStream.flush();
+
+                System.out.println("La palabra ha sido encontrada: " + palabraEncontrada);
+                System.out.println("Array: " + comprobacion[1]);
+                System.out.println(receivedString);
+            } catch (IOException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
         }
     }
