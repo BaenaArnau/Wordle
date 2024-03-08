@@ -38,10 +38,6 @@ public class PalabraRandom {
     }
 
     public int[] comprobarPalabra(String recibido) {
-
-        System.out.println("Esta es la palabra a adivinar: " + palabra);
-        System.out.println("Esta es la palabra recivida: " + recibido);
-
         // Convertimos la palabra almacenada y la palabra recibida a minúsculas y luego a arreglos de caracteres
         char[] palabraCaracteres = palabra.toLowerCase().toCharArray();
         char[] recibidoCaracteres = recibido.toLowerCase().toCharArray();
@@ -64,7 +60,6 @@ public class PalabraRandom {
                 }
             }
         }
-
         // Devolvemos el arreglo de coincidencias
         return coincidencias;
     }

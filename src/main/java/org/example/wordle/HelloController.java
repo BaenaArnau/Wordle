@@ -172,7 +172,6 @@ public class HelloController {
                 }
     }
 
-
     protected void inputPartida(ObjectInputStream respuestaServidor) throws IOException, ClassNotFoundException {
         turno++;
         palabraEncontrada = respuestaServidor.readBoolean();
