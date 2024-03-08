@@ -10,7 +10,7 @@ import java.net.URL;
  * Esta clase sirve para poder randomizar la palabra gracias a una api externa y guardarla para que el servidor pueda hacr las comprobaciones
  */
 public class PalabraRandom {
-    private final String palabra;
+    private String palabra;
     private boolean palabraEncontrada;
 
     public PalabraRandom() {
@@ -18,7 +18,7 @@ public class PalabraRandom {
         this.palabraEncontrada = false;
     }
 
-    private String encontrarPalabra(){
+    private String encontrarPalabra() {
         String respuesta = "";
         try {
             URL url = new URL("https://clientes.api.greenborn.com.ar/public-random-word?l=5");
@@ -26,15 +26,22 @@ public class PalabraRandom {
             connection.setRequestMethod("GET");
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            respuesta = reader.readLine();
+            respuesta = reader.readLine(); // Obtener la respuesta completa
             reader.close();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return respuesta;
+
+        // Extraer la palabra de la respuesta
+        String palabra = respuesta.substring(2, respuesta.length() - 2); // Eliminar corchetes y comillas
+        return palabra;
     }
 
-    public int[] comprobarPalabra(String recibido){
+    public int[] comprobarPalabra(String recibido) {
+
+        System.out.println("Esta es la palabra a adivinar: " + palabra);
+        System.out.println("Esta es la palabra recivida: " + recibido);
+
         // Convertimos la palabra almacenada y la palabra recibida a minúsculas y luego a arreglos de caracteres
         char[] palabraCaracteres = palabra.toLowerCase().toCharArray();
         char[] recibidoCaracteres = recibido.toLowerCase().toCharArray();
@@ -44,28 +51,15 @@ public class PalabraRandom {
 
         // Iteramos sobre los caracteres de la palabra recibida
         for (int i = 0; i < 5; i++) {
-            // Inicializamos un booleano para verificar si hay coincidencia exacta entre los caracteres
-            boolean coincidenciaExacta = false;
-
-            // Iteramos sobre los caracteres de la palabra almacenada
-            for (int j = 0; j < 5; j++) {
-                // Si encontramos una coincidencia exacta entre los caracteres, marcamos como verdadero y salimos del bucle interno
-                if (recibidoCaracteres[i] == palabraCaracteres[j]) {
-                    coincidenciaExacta = true;
-                    break;
-                }
-            }
-
-            // Si hay coincidencia exacta, marcamos el valor correspondiente como 2 (verde)
-            if (coincidenciaExacta) {
+            // Verificamos si hay una coincidencia exacta en posición y carácter
+            if (recibidoCaracteres[i] == palabraCaracteres[i]) {
                 coincidencias[i] = 2; // Verde
             } else {
-                // Buscamos coincidencias parciales y las marcamos como 1 (naranja) si no han sido marcadas previamente
+                // Si no hay coincidencia exacta, buscamos coincidencias parciales en el resto de la palabra almacenada
                 for (int j = 0; j < 5; j++) {
+                    // Si encontramos una coincidencia parcial, la marcamos si no ha sido marcada previamente
                     if (recibidoCaracteres[i] == palabraCaracteres[j] && coincidencias[j] == 0) {
-                        coincidencias[i] = 1; // Naranja
-                        coincidencias[j] = 1;
-                        break;
+                        coincidencias[j] = 1; // Naranja
                     }
                 }
             }
@@ -74,7 +68,6 @@ public class PalabraRandom {
         // Devolvemos el arreglo de coincidencias
         return coincidencias;
     }
-
 
     public String getPalabra() {
         return palabra;

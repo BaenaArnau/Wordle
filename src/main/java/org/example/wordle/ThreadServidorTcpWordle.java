@@ -32,8 +32,6 @@ public class ThreadServidorTcpWordle implements Runnable {
         System.out.println("antes try");
         while (true) {
             try {
-
-
                 System.out.println("despues try");
 
                 // Cambia la conversión a Wordle en lugar de String
