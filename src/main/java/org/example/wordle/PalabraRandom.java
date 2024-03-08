@@ -35,23 +35,32 @@ public class PalabraRandom {
     }
 
     public int[] comprobarPalabra(String recibido){
+        // Convertimos la palabra almacenada y la palabra recibida a minúsculas y luego a arreglos de caracteres
         char[] palabraCaracteres = palabra.toLowerCase().toCharArray();
         char[] recibidoCaracteres = recibido.toLowerCase().toCharArray();
+
+        // Creamos un arreglo de enteros para almacenar los resultados de la comparación
         int[] coincidencias = new int[5];
 
+        // Iteramos sobre los caracteres de la palabra recibida
         for (int i = 0; i < 5; i++) {
+            // Inicializamos un booleano para verificar si hay coincidencia exacta entre los caracteres
             boolean coincidenciaExacta = false;
 
+            // Iteramos sobre los caracteres de la palabra almacenada
             for (int j = 0; j < 5; j++) {
+                // Si encontramos una coincidencia exacta entre los caracteres, marcamos como verdadero y salimos del bucle interno
                 if (recibidoCaracteres[i] == palabraCaracteres[j]) {
                     coincidenciaExacta = true;
                     break;
                 }
             }
 
+            // Si hay coincidencia exacta, marcamos el valor correspondiente como 2 (verde)
             if (coincidenciaExacta) {
                 coincidencias[i] = 2; // Verde
             } else {
+                // Buscamos coincidencias parciales y las marcamos como 1 (naranja) si no han sido marcadas previamente
                 for (int j = 0; j < 5; j++) {
                     if (recibidoCaracteres[i] == palabraCaracteres[j] && coincidencias[j] == 0) {
                         coincidencias[i] = 1; // Naranja
@@ -61,8 +70,11 @@ public class PalabraRandom {
                 }
             }
         }
+
+        // Devolvemos el arreglo de coincidencias
         return coincidencias;
     }
+
 
     public String getPalabra() {
         return palabra;

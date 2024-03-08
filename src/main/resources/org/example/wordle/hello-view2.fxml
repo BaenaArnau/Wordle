@@ -66,7 +66,7 @@
                <Font size="50.0" />
             </font>
          </Label>
-         <Label id="QuintaLetra" fx:id="QuintaLetr2" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <Label id="QuintaLetra" fx:id="QuintaLetra2" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
             <font>
                <Font size="50.0" />
             </font>
@@ -98,7 +98,7 @@
                <Font size="50.0" />
             </font>
          </Label>
-         <Label id="QuintaLetra" fx:id="QuintaLetr3" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <Label id="QuintaLetra" fx:id="QuintaLetra3" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
             <font>
                <Font size="50.0" />
             </font>
@@ -130,7 +130,7 @@
                <Font size="50.0" />
             </font>
          </Label>
-         <Label id="QuintaLetra" fx:id="QuintaLetr4" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <Label id="QuintaLetra" fx:id="QuintaLetra4" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" text="E" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
             <font>
                <Font size="50.0" />
             </font>
