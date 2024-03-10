@@ -10,10 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -175,6 +172,7 @@ public class HelloController {
         turno++;
         palabraEncontrada = respuestaServidor.readBoolean();
         estadoPalabra = (int[]) respuestaServidor.readObject();
+        palabraBuena = (String) respuestaServidor.readObject();
         for (int i = 0; i < estadoPalabra.length; i++) {
             System.out.println(estadoPalabra[i]);
         }

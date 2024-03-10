@@ -3,13 +3,14 @@ package org.example.wordle;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
  * Esta clase sirve para poder randomizar la palabra gracias a una api externa y guardarla para que el servidor pueda hacr las comprobaciones
  */
-public class PalabraRandom {
+public class PalabraRandom implements Serializable {
     private String palabra;
     private boolean palabraEncontrada;
 
