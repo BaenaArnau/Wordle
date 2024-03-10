@@ -10,5 +10,4 @@
     </padding>
    <Button fx:id="play" onAction="#onPlayClick" mnemonicParsing="false" text="Jugar" />
     <Button fx:id="config"  onAction="#onConfigClick" text="Configuración" />
-   <Button mnemonicParsing="false" text="Salir" />
 </VBox>

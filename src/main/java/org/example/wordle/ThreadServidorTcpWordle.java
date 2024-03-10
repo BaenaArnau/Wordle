@@ -45,7 +45,6 @@ public class ThreadServidorTcpWordle implements Runnable {
 
                 outputStream.writeBoolean(palabraEncontrada);
                 outputStream.writeObject(comprobacion);
-                outputStream.writeObject(palabraRandom.getPalabra());
                 outputStream.flush();
 
                 System.out.println("La palabra ha sido encontrada: " + palabraEncontrada);

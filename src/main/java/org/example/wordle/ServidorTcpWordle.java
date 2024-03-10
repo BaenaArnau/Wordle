@@ -15,7 +15,6 @@ public class ServidorTcpWordle {
 
     public void listen(){
         ServerSocket serverSocket = null;
-
         try {
             serverSocket = new ServerSocket(puerto);
             System.out.println("Server listening on port " + puerto);

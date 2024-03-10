@@ -17,11 +17,6 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        /*FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("hello-view2.fxml"));
-        Scene scene2 = new Scene(fxmlLoader.load(), 540, 700);
-        stage.setTitle("Wordle!");
-        stage.setScene(scene);
-        stage.show();*/
     }
 
     public static void main(String[] args) {
